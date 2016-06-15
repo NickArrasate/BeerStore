@@ -1,0 +1,34 @@
+<h2>Add a beer</h2>
+<form>
+  <div class="form-group">
+    <label for="">Name:</label>
+    {{input value=name class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="">Brand:</label>
+    {{input value=brand class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="">Price:</label>
+    {{input value=price class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="">Image URL:</label>
+    {{input value=image class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="">Notes:</label>
+    {{input value=notes class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="">Type:</label>
+    {{#x-select value=type class="form-control"}}
+      {{#x-option value="ipa"}}IPA{{/x-option}}
+      {{#x-option value="pale"}}Pale/Session{{/x-option}}
+      {{#x-option value="porter"}}Porter/Stout{{/x-option}}
+      {{#x-option value="sour"}}Sour{{/x-option}}
+      {{#x-option value="red"}}Red/Brown Ale{{/x-option}}
+    {{/x-select}}
+  </div>
+  <button type='button' class='btn btn-success'{{action 'newBeer'}}>Submit</button>
+</form>

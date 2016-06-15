@@ -1,0 +1,18 @@
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model(){
+    return this.store.findAll('beer');
+  },
+  actions:{
+    newBeer(params){
+      var newBeer = this.store.createRecord('beer', params);
+      newBeer.save();
+      this.transitionTo('admin');
+    },
+    deleteBeer(beer){
+      beer.destroyRecord();
+      this.transitionTo('admin');
+    }
+  }
+});

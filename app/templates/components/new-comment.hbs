@@ -1,0 +1,15 @@
+{{#if makeNewPost}}
+<form>
+  <div class="form-group">
+    <label for="">Name:</label>
+    {{input value=name class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="">Comment:</label>
+    {{input value=comment class="form-control"}}
+  </div>
+  <button {{action 'newPost'}}>Submit</button>
+</form>
+{{else}}
+<button {{action "showPostForm"}}>Write a Comment</button>
+{{/if}}

@@ -1,0 +1,7 @@
+<h3>Beers:</h3>
+<ul>
+  {{#each model as |beer|}}
+  <li>{{beer.name}}</li>
+  <button class='btn btn-danger'{{action 'deleteBeer' beer}}>Delete</button>
+  {{/each}}
+</ul>
