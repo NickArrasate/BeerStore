@@ -1,1 +1,6 @@
-{{yield}}
+{{#each comments as |comment|}}
+<div class='comment-row'>
+  <h4>{{comment.name}}</h4>
+  <h5>{{comment.comment}}</h5>
+</div>
+{{/each}}

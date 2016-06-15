@@ -1,15 +1,20 @@
 <div class="big-card">
   <h1 class="bordBot">{{model.name}}</h1>
-  <div class="row">
-    <div class="col-md-6">
+  <div class="row page-header">
+    <div class="col-sm-6">
       <img class="maxW" src={{model.image}}>
     </div>
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <div class="beer-display-info">
         <h4>{{model.brand}}</h4>
         <h4>Style: {{model.type}}</h4>
         <h4>Six Pack Price: {{model.price}}</h4>
+        <button class='btn button-info'{{action 'addToCart' model}}>Add to Cart</button>
       </div>
     </div>
+  </div>
+  <h3>Comments</h3>
+  <div class='comments'>
+    {{comment-display comments=model.comments}}
   </div>
 </div>

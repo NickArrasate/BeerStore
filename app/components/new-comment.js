@@ -4,14 +4,16 @@ export default Ember.Component.extend({
   makeNewPost: false,
   actions:{
     showPostForm(){
-      this.set('makeNewPost', true)
+      this.set('makeNewPost', true);
     },
-    newPost(){
+    newComment(){
       var params = {
         name: this.get('name') ? this.get('name') : "",
-        comment: this.get('comment') ? this.get('comment') : ""
+        comment: this.get('comment') ? this.get('comment') : "",
+        beer: this.get('beer')
     };
-    this.sendAction('newPost', params);
+    this.sendAction('newComment', params);
+    this.set('makeNewPost', false);
     this.set('name', "");
     this.set('comment', "");
     }

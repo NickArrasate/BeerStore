@@ -2,6 +2,7 @@
 <div class='comment-form'>
 <form>
   <div class="form-group">
+    <h4>Add a Comment:</h4>
     <label for="">Name:</label>
     {{input value=name class="form-control"}}
   </div>
@@ -9,9 +10,9 @@
     <label for="">Comment:</label>
     {{input value=comment class="form-control"}}
   </div>
-  <button {{action 'newPost'}}>Submit</button>
+  <button {{action 'newComment'}}>Submit</button>
 </form>
 </div>
 {{else}}
-<button class='btn btn-warning'{{action "showPostForm"}}>Write a Comment</button>
+<button class='btn btn-warning show-form' {{action "showPostForm"}}>Write a Comment</button>
 {{/if}}
