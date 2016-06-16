@@ -1,7 +1,10 @@
 <ul>
 
 {{#each shoppingCart.items as |item|}}
-  <li>{{item.name}} -- {{item.price}}</li>
+  <li class="bordBot">
+    {{item.name}} -- {{item.price}}
+    <button class="deleteFromCart btn btn-danger" {{action 'removeFromCart' item}}>Remove From Cart</button>
+  </li>
 {{/each}}
 
 </ul>

@@ -1,16 +1,37 @@
 <ul>
-  <h3 class='index-header'>Check Out These Beers!</h3>
+<div class="row index-header">
+  <div class="col-md-8">
+    <h1 class="header-card">Dis Beer Stor</h1>
+  </div>
+  <div class="col-md-4">
+    <form>
+      <div class="form-group filterBox">
+        <label for='filter'>Filter By:</label>
+        {{#x-select class="form-control" value=filter id="filter" action='selectCategory'}}
+          {{#x-option value="all"}}All{{/x-option}}
+          {{#x-option value="ipa"}}IPA{{/x-option}}
+          {{#x-option value="pale"}}Pale/Session{{/x-option}}
+          {{#x-option value="porter"}}Porter/Stout{{/x-option}}
+          {{#x-option value="sour"}}Sour{{/x-option}}
+          {{#x-option value="red"}}Red/Brown Ale{{/x-option}}
+        {{/x-select}}
+      </div>
+    </form>
+  </div>
+</div>
   <div class='row'>
   {{#each model as |beer|}}
-  {{#link-to 'beer' beer.id class='card-button'}}
-  <div class='col-md-4 card-col'>
-  <li class='beer-card'>
-    <img class='beer-image' src={{beer.image}}>
-    <span class='beer-name'>{{beer.name}}</span>
-    <span class='beer-price'>Six-pack ${{beer.price}}</span>
-  </li>
-</div>
-{{/link-to}}
+    {{#if (or (eq selectedCategory beer.type) (eq selectedCategory 'all'))}}
+      {{#link-to 'beer' beer.id class='card-button'}}
+        <div class='col-md-4 card-col'>
+          <li class='beer-card'>
+            <img class='beer-image' src={{beer.image}}>
+            <span class='beer-name'>{{beer.name}}</span>
+            <span class='beer-price'>Six-pack ${{beer.price}}</span>
+          </li>
+        </div>
+      {{/link-to}}
+    {{/if}}
   {{/each}}
-</div>
+  </div>
 </ul>
