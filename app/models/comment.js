@@ -5,5 +5,6 @@ import { belongsTo } from 'ember-data/relationships';
 export default Model.extend({
   name: attr(),
   comment: attr(),
+  rating: attr(),
   beer: belongsTo('beer',{async:true})
 });

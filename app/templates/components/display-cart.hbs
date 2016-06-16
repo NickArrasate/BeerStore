@@ -1,9 +1,9 @@
 <ul>
 
-{{#each shoppingCart.items as |item|}}
+{{#each shoppingCart.items as |item index|}}
   <li class="bordBot">
     {{item.name}} -- {{item.price}}
-    <button class="deleteFromCart btn btn-danger" {{action 'removeFromCart' item}}>Remove From Cart</button>
+    <button class="deleteFromCart btn btn-danger" {{action 'removeFromCart' index}}>Remove From Cart</button>
   </li>
 {{/each}}
 

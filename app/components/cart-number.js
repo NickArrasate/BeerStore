@@ -6,4 +6,5 @@ export default Ember.Component.extend({
   cartLength: Ember.computed('shoppingCart.items.[]', function(){
     return this.get('shoppingCart.items.length');
   })
+  
 });

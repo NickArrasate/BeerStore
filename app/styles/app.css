@@ -9,7 +9,13 @@ body{
   display:inline;
   margin-left: 40px;
 }
-
+.cartNum{
+  margin-left: -55px;
+}
+.glyphicon{
+  display: inline;
+  width: 60px;
+}
 img {
   border-radius: 5px;
 }
